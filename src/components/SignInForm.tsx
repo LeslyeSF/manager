@@ -1,5 +1,5 @@
-import { FormContainer, FooterLink, Title } from '../styles/formStyle';
-import Link from "next/link";
+import { FormContainer, FooterLink, Title } from '../styles/formStyle'
+import Link from 'next/link'
 
 export default function SignInForm(){
   return(
@@ -15,6 +15,6 @@ export default function SignInForm(){
         <FooterLink>Ainda não tem conta? Cadastre-se</FooterLink>
       </Link>
     </FormContainer>
-  );
+  )
 }
 

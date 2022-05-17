@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
 /* Box sizing rules */
@@ -75,7 +75,11 @@ select {
     font-family: 'Poppins', sans-serif;
   }
   body {
-    background-color: #FCFCFC;
-    color: #10102D;
+    background-color: #10102D;
+    color: #FCFCFC;
   }
-`;
+  #__next{
+    width: 100vw;
+    min-height: 100vh;
+  }
+`

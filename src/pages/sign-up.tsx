@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-page-custom-font */
-import Logo from '../components/Logo';
-import HeadPage from '../components/HeadPage';
-import SignUpForm from '../components/SignUpForm';
-import { Container, LogoContainer, FormArea, FormContainer } from '../styles/authPageStyle';
+import Logo from '../components/Logo'
+import HeadPage from '../components/HeadPage'
+import SignUpForm from '../components/SignUpForm'
+import { Container, LogoContainer, FormArea, FormContainer } from '../styles/authPageStyle'
 
 export default function SignUp() {
   return (
@@ -20,6 +20,6 @@ export default function SignUp() {
         </FormArea>
       </Container>
     </>
-  );
+  )
 }
 

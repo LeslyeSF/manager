@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const Title = styled.p`
   width: 250px;
@@ -7,7 +7,7 @@ const Title = styled.p`
   font-weight: 800;
 
   text-align: center;
-`;
+`
 
 const FooterLink = styled.p`
   width: 300px;
@@ -19,7 +19,7 @@ const FooterLink = styled.p`
   &:hover {
     cursor: pointer;
   }
-`;
+`
 
 const FormContainer = styled.div`
   width: 300px;
@@ -73,7 +73,7 @@ const FormContainer = styled.div`
       cursor: pointer;
     }
   }
-`;
+`
 
 const DateInput = styled.div`
   display: flex;
@@ -98,6 +98,6 @@ const DateInput = styled.div`
     color: #4EA7B9;
     font-weight: 600;
   }
-`;
+`
 
-export { FormContainer, Title, FooterLink, DateInput };
+export { FormContainer, Title, FooterLink, DateInput }

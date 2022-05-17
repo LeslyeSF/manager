@@ -1,8 +1,11 @@
-/* eslint-disable @next/next/no-page-custom-font */
+import ReactLoading from 'react-loading'
+import { LoadingContainer } from '../styles/loadingStyle'
 
 export default function Loading() {
   return (
-    <h1>Loading</h1>
-  );
+    <LoadingContainer>
+      <ReactLoading type={'bars'} color={'#F4F9F5'} height={500} width={375} />
+    </LoadingContainer>
+  )
 }
 

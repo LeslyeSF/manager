@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Container = styled.div`
   width: 100%;
@@ -6,7 +6,7 @@ const Container = styled.div`
   background-color: #10102D;
   color: white;
   display: flex;
-`;
+`
 const LogoContainer = styled.div`
   width: 50%;
   height: 100%;
@@ -20,7 +20,7 @@ const LogoContainer = styled.div`
   color: #FCFCFC;
   font-size: 70px;
   font-weight: 900;
-`;
+`
 
 const FormArea = styled.div`
   width: 50%;
@@ -30,7 +30,7 @@ const FormArea = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
+`
 
 const FormContainer = styled.div`
   width: 400px;
@@ -44,6 +44,6 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center; 
-`;
+`
 
-export { Container, LogoContainer, FormArea, FormContainer };
+export { Container, LogoContainer, FormArea, FormContainer }
