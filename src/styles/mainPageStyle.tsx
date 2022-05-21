@@ -14,5 +14,21 @@ const MainSection = styled.div`
 
   background-color: #F4F9F5;
   padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
 `
-export { HomeContainer, MainSection }
+const TitleSection = styled.p`
+  font-size: 30px;
+  font-weight: 400;
+  color: #10102D;
+
+  span{
+    font-weight: 600;
+    color: #4BA7B7;
+  }
+`;
+
+export { HomeContainer, MainSection, TitleSection };

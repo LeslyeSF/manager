@@ -6,11 +6,10 @@ export default function Dashboard(){
     <Container>
       <Title>Dashboard</Title>
       <PieChart
-   animation
-   animationDuration={500}
-   animationEasing="ease-out"
-   center={[50, 50]}
-   data={[
+      animationDuration={500}
+      animationEasing="ease-out"
+      center={[50, 50]}
+      data={[
      {
      color: "#E38627",
      title: "One",

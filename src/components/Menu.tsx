@@ -3,6 +3,7 @@ import Logo from './Logo'
 import { MdDashboard } from 'react-icons/md'
 import { BiTransfer } from 'react-icons/bi'
 import { FiSettings } from 'react-icons/fi'
+import { MdAppRegistration } from 'react-icons/md'
 import { 
   Container, 
   LogoContainer, 
@@ -34,6 +35,10 @@ export default function Menu(){
         <div>
           <BiTransfer/>
           <p>Transações</p>
+        </div>
+        <div>
+          <MdAppRegistration/>
+          <p>Cadastrar</p>
         </div>
       </MenuOptions>
       <Option>
