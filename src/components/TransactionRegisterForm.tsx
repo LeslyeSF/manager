@@ -58,9 +58,7 @@ export default function TransactionRegisterForm(){
   },[])
   
   function submitForm(e){
-    e.preventDefault()
-    const token = 'eyJhbGciOiJIUzI1NiJ9.bGVzbHllQGdtYWlsLmNvbQ.KKIEYeX99meZQ5jpI2gDrSffQ73y4e2UfNgvXBW7X94'
-    
+    e.preventDefault()    
     const body = {
       description: form.description,
       type: form.type,

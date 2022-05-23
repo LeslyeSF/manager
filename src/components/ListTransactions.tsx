@@ -16,6 +16,7 @@ export default function ListTransactions() {
   useEffect(()=>{
     getTransactions(token)
     .then((ans)=>{
+      console.log(token)
       const auxList = ans.data.map((data)=>{        
         return (
           <TransactionDiv type={data.type} key={data.id}>
