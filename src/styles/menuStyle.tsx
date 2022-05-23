@@ -45,7 +45,16 @@ const FramePhoto = styled.div`
   width: 80px;
   height: 80px;
 
-  background-color: #FCFCFC;
+  background-color: #6AEAF5;
+
+  color: #10102D;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 40px;
+  font-weight: 700;
 
   border-radius: 50%;
 
@@ -60,7 +69,7 @@ const MenuOptions = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   align-items: start;
 
   padding: 0 0 0 10px;

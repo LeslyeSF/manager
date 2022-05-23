@@ -1,10 +1,15 @@
 import { FormContainer, FooterLink, Title, DateInput } from '../styles/formStyle'
 import Link from 'next/link'
+import Swal from 'sweetalert2'
 import { useState } from 'react'
 import { cpfMask } from '../utils/cpfMask'
 import { phoneMask } from '../utils/phoneMask'
+import { signUp } from '../services/api'
+import { useRouter } from 'next/router'
+
 
 export default function SignUpForm(){
+  const router = useRouter()
   const [form, setForm] = useState({
     name: '',
     cpf: '',
@@ -13,11 +18,37 @@ export default function SignUpForm(){
     phone: '',
     password: ''
   })
+
+  function submitForm(e){
+    e.preventDefault()
+  
+    const body = {...form}
+    body.phone = body.phone.replace(' ', '');
+    if (body.phone === '') delete body.phone
+    
+    signUp(body)
+    .then(()=>{
+      Swal.fire(
+        'Good job!',
+        'Cadastro realizado com sucesso!',
+        'success'
+      )
+      router.push('/')
+    })
+    .catch(()=>{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Falha ao realizar cadastro!',
+        footer: '<a href="">Why do I have this issue?</a>'
+      })
+    })
+  }
   
   return(
     <FormContainer>
       <Title>Cadastre-se!</Title>
-      <form>
+      <form onSubmit={submitForm}>
         <input 
         type='text' 
         placeholder='Nome' 
@@ -58,7 +89,7 @@ export default function SignUpForm(){
         }}/>
         <input 
         type='text' 
-        placeholder='Telefone'
+        placeholder='Telefone (Opcional)'
         value={form.phone}
         maxLength={15}
         onChange={(e) => {
@@ -66,7 +97,8 @@ export default function SignUpForm(){
           setForm({...form})
         }}/>
         <input 
-        type='text' 
+        type='password' 
+        minLength={8}
         placeholder='Senha' 
         required
         value={form.password}

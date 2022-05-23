@@ -2,19 +2,20 @@
 import Menu from '../components/Menu'
 import HeadPage from '../components/HeadPage'
 import { HomeContainer, MainSection, MenuSection, TitleSection } from '../styles/mainPageStyle'
-import ListTransactions from '../components/ListTransactions'
+import ListBankAccount from '../components/ListBankAccount'
+import ListCreditCard from '../components/listCreditCard'
 
-export default function Transactions(){
+export default function CreditCards(){
   return(
     <>
-      <HeadPage titlePage={'Suas Transações'}/>
+      <HeadPage titlePage={'Cartões de crédito'}/>
       <HomeContainer>
         <MenuSection>
           <Menu/>
         </MenuSection>
         <MainSection>
-          <TitleSection>Transações</TitleSection>
-          <ListTransactions/>
+          <TitleSection>Contas bancárias</TitleSection>
+          <ListCreditCard/>
         </MainSection>
       </HomeContainer>
     </>

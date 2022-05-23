@@ -87,15 +87,70 @@ const FormContainer = styled.form`
   }
 
   .radioSection{
-    margin: 0;
-    flex-direction: row;
-    gap: 5px;
-    align-items: center;
-    height: 45px;
-    padding: 10px;
-
+    
   }
  
 `
+const ButtonsArea = styled.section`
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  height: 45px;
+  padding: 10px;
 
-export { FormContainer };
+  border-radius: 5px;
+
+  ${(props: propsType) => ('input' === props.selected)? 
+    `background-color: #77DD77;`
+    : 'background-color: #F6BDC0;'
+  }
+
+  div{
+    width: 100px;
+    height: 30px;
+
+    border-radius: 5px;
+    border: 1px solid #10102D;
+
+    color: #10102D;
+  }
+
+  div:hover{
+    cursor: pointer;
+  }
+
+  div:nth-child(1){
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ${(props: propsType) => (props.name[0] === props.selected)? 
+      `color: #77DD77;
+       background-color: #008000;
+       border: 0px;
+       pointer-events: none;
+       `: ''
+    }
+  }
+  div:nth-child(2){
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ${(props: propsType) => (props.name[1] === props.selected)? 
+      `color: #F6BDC0;
+       background-color: #BB0A1E;
+       border: 0px;
+       pointer-events: none;
+       `: ''
+    }
+  }
+
+`
+export { FormContainer, ButtonsArea };
+
+interface propsType {
+  name: string[]
+  selected: string
+}

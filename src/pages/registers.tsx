@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import Menu from '../components/Menu'
 import HeadPage from '../components/HeadPage'
-import { HomeContainer, MainSection, TitleSection } from '../styles/mainPageStyle'
+import { HomeContainer, MainSection, MenuSection, TitleSection } from '../styles/mainPageStyle'
 import MenuRegister from '../components/MenuRegister'
-import { useState } from 'react';
-import CreditCardRegisterForm from '../components/CreditCardRegisterForm';
-import BankAccountRegisterForm from '../components/BankAccountRegisterForm';
-import TransactionRegisterForm from '../components/TransactionRegisterForm';
+import { useState } from 'react'
+import CreditCardRegisterForm from '../components/CreditCardRegisterForm'
+import BankAccountRegisterForm from '../components/BankAccountRegisterForm'
+import TransactionRegisterForm from '../components/TransactionRegisterForm'
 
 export default function Registers() {
   const [selected, setSelected] = useState('transaction')
@@ -15,7 +15,9 @@ export default function Registers() {
     <>
       <HeadPage titlePage={'Cadastrar'}/>
       <HomeContainer>
-        <Menu/>
+        <MenuSection>
+          <Menu/>
+        </MenuSection>
         <MainSection>
           <MenuRegister selected={selected} setSelected={setSelected}/>
           <TitleSection>

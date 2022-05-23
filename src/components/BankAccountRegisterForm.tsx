@@ -1,16 +1,50 @@
+import { useRouter } from 'next/router'
 import { useState } from 'react'
+import Swal from 'sweetalert2'
+import { useAuth } from '../context/authContext'
+import { insertBankAccount } from '../services/api'
 import { FormContainer } from '../styles/formRegisterStyle'
 import maskMoney from '../utils/moneyMask'
 
 export default function BankAccountRegisterForm(){
+  const { token } = useAuth()
+  const router = useRouter()
   const [form, setForm] = useState({
     bankName: '',
     accountNumber: '',
     amount: ''
   })
+
+  function submitForm(e){
+    e.preventDefault()    
+    const body = {
+      bankName: form.bankName,
+      accountNumber: form.accountNumber,
+      amount: Number(form.amount.replace('.','').replace(',','').replace('R$ ',''))
+    }
+    
+    insertBankAccount(token, body)
+    .then(()=>{
+      Swal.fire(
+        'Good job!',
+        'Cartao cadastrado!',
+        'success'
+      )
+      router.push('/home')
+    })
+    .catch(()=>{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Falha ao realizar cadastro!',
+        footer: '<a href="">Why do I have this issue?</a>'
+      })
+    })
+    
+  }
   
   return(
-    <FormContainer>
+    <FormContainer onSubmit={submitForm}>
       <div>
         <label>Nome do banco:</label>
         <label>Número da conta:</label>

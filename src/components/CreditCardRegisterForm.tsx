@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import { FormContainer } from '../styles/formRegisterStyle'
+import Swal from 'sweetalert2'
+import { insertCreditCard } from '../services/api'
+import { useRouter } from 'next/router'
+import { useAuth } from '../context/authContext'
 
 export default function CreditCardRegisterForm(){
+  const { token } = useAuth()
+  const router = useRouter()
   const [form, setForm] = useState({
     name: '',
     number: '',
@@ -9,8 +15,36 @@ export default function CreditCardRegisterForm(){
     gracePeriod: ''
   })
 
+  function submitForm(e){
+    e.preventDefault()
+    const body = {
+      name :  form.name,
+      number: form.number,
+      lastPaymentDay: Number(form.lastPaymentDay),
+      gracePeriod: Number(form.gracePeriod)
+    }
+    
+    insertCreditCard(token, body)
+    .then(()=>{
+      Swal.fire(
+        'Good job!',
+        'Cartao cadastrado!',
+        'success'
+      )
+      router.push('/home')
+    })
+    .catch(()=>{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Falha ao realizar cadastro!',
+        footer: '<a href="">Why do I have this issue?</a>'
+      })
+    })
+  }
+
   return(
-    <FormContainer>
+    <FormContainer onSubmit={submitForm}>
       <div>
         <label>Nome do cartão:</label>
         <label>Número do cartão:</label>

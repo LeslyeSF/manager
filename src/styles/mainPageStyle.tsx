@@ -1,14 +1,22 @@
 import styled from 'styled-components'
 
+const MenuSection = styled.div`
+  width: 340px;
+`
+
 const HomeContainer = styled.div`
   width: 100vw;
-  min-height: 100vh; 
+  height: 100vh; 
+
+  overflow: hidden;
 
   display: flex;
 `
 const MainSection = styled.div`
-  min-height: 95vh;
+  min-height: 100%;
   flex-grow: 1;
+
+  overflow-y: scroll;
 
   border-radius: 50px 0 0 50px;
 
@@ -19,6 +27,27 @@ const MainSection = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 20px;
+
+  ::-webkit-scrollbar-track
+  {
+    border: 5px solid white;
+    // border color does not support transparent on scrollbar
+    // border-color: transparent;
+    background-color: #b2bec3;
+  }
+
+  ::-webkit-scrollbar
+  {
+    width: 5px;
+    background-color: #dfe6e9;
+  }
+
+  ::-webkit-scrollbar-thumb
+  {
+    background-color: #74b9ff;
+    border-radius: 10px;
+  }
+
 `
 const TitleSection = styled.p`
   font-size: 30px;
@@ -31,4 +60,4 @@ const TitleSection = styled.p`
   }
 `;
 
-export { HomeContainer, MainSection, TitleSection };
+export { HomeContainer, MainSection, TitleSection, MenuSection };
