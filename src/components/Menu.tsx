@@ -71,9 +71,9 @@ export default function Menu(){
       </LogoContainer>
       <UserProfile>
         <FramePhoto>
-          {(user.userName[0]).toUpperCase()}
+          {(user.userName[0])?.toUpperCase()}
         </FramePhoto>
-        <p>{(user.userName).toUpperCase()}</p>
+        <p>{(user.userName)?.toUpperCase()}</p>
       </UserProfile>
       <MenuOptions>
         <h1>Menu</h1>
