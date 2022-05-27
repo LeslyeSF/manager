@@ -6,6 +6,15 @@ const Container = styled.div`
   background-color: #10102D;
   color: white;
   display: flex;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    min-height: 100vh;
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const LogoContainer = styled.div`
   width: 50%;
@@ -30,6 +39,9 @@ const FormArea = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `
 
 const FormContainer = styled.div`
@@ -44,6 +56,13 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center; 
+
+  @media (max-width: 800px) {
+    width: 100%;
+    padding: 20px;
+    min-height: 400px;
+    border-radius: 50px 50px 0 0;
+  }
 `
 
 export { Container, LogoContainer, FormArea, FormContainer }

@@ -1,10 +1,10 @@
 import ReactLoading from 'react-loading'
 import { LoadingContainer } from '../styles/loadingStyle'
 
-export default function Loading() {
+export default function Loading({ width, height, color }) {
   return (
     <LoadingContainer>
-      <ReactLoading type={'bars'} color={'#F4F9F5'} height={500} width={375} />
+      <ReactLoading type={'bars'} color={color} height={height} width={width} />
     </LoadingContainer>
   )
 }

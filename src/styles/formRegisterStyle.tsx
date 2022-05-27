@@ -85,10 +85,6 @@ const FormContainer = styled.form`
     color: #6AEAF5;
     font-weight: 600;
   }
-
-  .radioSection{
-    
-  }
  
 `
 const ButtonsArea = styled.section`
