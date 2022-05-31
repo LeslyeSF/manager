@@ -22,14 +22,36 @@ const FooterLink = styled.p`
 `
 
 const FormContainer = styled.div`
-  width: 300px;
+  width: 100%;
 
+  padding: 30px;
+
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap 30px;
 
+  ::-webkit-scrollbar-track
+  {
+    border: 5px solid white;
+    background-color: #b2bec3;
+  }
+
+  ::-webkit-scrollbar
+  {
+    width: 6px;
+    background-color: #dfe6e9;
+  }
+
+  ::-webkit-scrollbar-thumb
+  {
+    background-color: #74b9ff;
+    border-radius: 20px;
+  }
+
   form {
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,6 +95,11 @@ const FormContainer = styled.div`
       cursor: pointer;
     }
   }
+
+  @media (max-width: 800px) {
+    overflow: visible;
+    padding: 0px 10px 0px 10px;    
+  }
 `
 
 const DateInput = styled.div`
@@ -99,5 +126,19 @@ const DateInput = styled.div`
     font-weight: 600;
   }
 `
+const ConfirmPassword = styled.p`
+  ${(props : confirm) => 
+    (props.confirmPassword === '')?
+    `display: none;`:
+    (props.confirmPassword !== props.password)?
+    `color: red;`:
+    `color: green;`
+  }
+`
 
-export { FormContainer, Title, FooterLink, DateInput }
+interface confirm {
+  password: string
+  confirmPassword: string
+}
+
+export { FormContainer, Title, FooterLink, DateInput, ConfirmPassword }

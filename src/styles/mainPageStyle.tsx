@@ -2,18 +2,43 @@ import styled from 'styled-components'
 
 const MenuSection = styled.div`
   width: 340px;
+  .logoButton {
+    display: none;
+  }
+  @media (max-width: 800px) {
+    width: 100%;
+    padding: 20px;
+    .logoButton {
+      display: flex;
+    }
+  }
+`
+const LogoContainer = styled.div`
+  width: 100%;
+
+  display: flex;
+  gap: 20px;
+
+  p{
+    color: #FCFCFC;
+    font-size: 40px;
+    font-weight: 900;
+  }
 `
 
 const HomeContainer = styled.div`
   width: 100vw;
-  height: 100vh; 
+  min-height: 100vh; 
 
   overflow: hidden;
 
   display: flex;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `
 const MainSection = styled.div`
-  min-height: 100%;
+  height: 100vh;
   flex-grow: 1;
 
   overflow-y: scroll;
@@ -25,6 +50,7 @@ const MainSection = styled.div`
 
   display: flex;
   flex-direction: column;
+
   align-items: start;
   gap: 20px;
 
@@ -60,4 +86,10 @@ const TitleSection = styled.p`
   }
 `;
 
-export { HomeContainer, MainSection, TitleSection, MenuSection };
+export { 
+  HomeContainer, 
+  MainSection, 
+  TitleSection, 
+  MenuSection, 
+  LogoContainer
+};

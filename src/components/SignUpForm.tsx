@@ -1,10 +1,10 @@
-import { FormContainer, FooterLink, Title, DateInput } from '../styles/formStyle'
+import { FormContainer, FooterLink, Title, DateInput, ConfirmPassword } from '../styles/formStyle'
 import Link from 'next/link'
-import Swal from 'sweetalert2'
+import { AiFillCheckCircle } from 'react-icons/ai'
+import { AiFillCloseCircle } from 'react-icons/ai'
 import { useState } from 'react'
 import { cpfMask } from '../utils/cpfMask'
 import { phoneMask } from '../utils/phoneMask'
-import { signUp } from '../services/api'
 import { useRouter } from 'next/router'
 import Loading from './Loading'
 import { submitFormSignUp } from '../services/submitForms'
@@ -18,7 +18,8 @@ export default function SignUpForm(){
     birthday: '',
     email: '',
     phone: '',
-    password: ''
+    password: '',
+    confirmPassword: ''
   })
   const [loading, setLoading] = useState(false)
   
@@ -29,62 +30,88 @@ export default function SignUpForm(){
         <Title>Cadastre-se!</Title>
         <form onSubmit={(e) => submitFormSignUp(e, {setLoading, form, router})}>
           <input 
-          type='text' 
-          placeholder='Nome' 
-          value={form.name}
-          required 
-          onChange={(e) => {
-            form.name = e.target.value
-            setForm({...form})
-          }}/>
+            type='text' 
+            placeholder='Nome' 
+            value={form.name}
+            required 
+            onChange={(e) => {
+              form.name = e.target.value
+              setForm({...form})
+            }}
+          />
           <input 
-          type='text' 
-          placeholder='Cpf' 
-          required
-          value={form.cpf}
-          onChange={(e) => {
-            form.cpf = cpfMask(e.target.value)
-            setForm({...form})
-          }}/>
+            type='text' 
+            placeholder='Cpf' 
+            required
+            value={form.cpf}
+            onChange={(e) => {
+              form.cpf = cpfMask(e.target.value)
+              setForm({...form})
+            }}
+          />
           <DateInput>
             <label>Data de nascimento</label>
             <input 
-            type='date' 
-            required
-            value={form.birthday}
-            onChange={(e) => {
-              form.birthday = e.target.value
-              setForm({...form})
-            }}/>
+              type='date' 
+              required
+              value={form.birthday}
+              onChange={(e) => {
+                form.birthday = e.target.value
+                setForm({...form})
+              }}
+            />
           </DateInput>
           <input 
-          type='email' 
-          placeholder='Email' 
-          required
-          value={form.email}
-          onChange={(e) => {
-            form.email = e.target.value
-            setForm({...form})
-          }}/>
+            type='email' 
+            placeholder='Email' 
+            required
+            value={form.email}
+            onChange={(e) => {
+              form.email = e.target.value
+              setForm({...form})
+            }}
+          />
           <input 
-          type='text' 
-          placeholder='Telefone (Opcional)'
-          value={form.phone}
-          maxLength={15}
-          onChange={(e) => {
-            form.phone = phoneMask(e.target.value)
-            setForm({...form})
-          }}/>
+            type='text' 
+            placeholder='Telefone (Opcional)'
+            value={form.phone}
+            maxLength={15}
+            onChange={(e) => {
+              form.phone = phoneMask(e.target.value)
+              setForm({...form})
+            }}
+          />
           <input 
-          type='password' 
-          minLength={8}
-          placeholder='Senha' 
-          required
-          value={form.password}
-          onChange={(e) => {
-            form.password = e.target.value
-            setForm({...form})
-          }}/>
+            type='password' 
+            minLength={8}
+            placeholder='Senha' 
+            required
+            value={form.password}
+            onChange={(e) => {
+              form.password = e.target.value
+              setForm({...form})
+            }}
+          />  
+          <input
+            type='password' 
+            minLength={8}
+            placeholder='Digite a senha novamente' 
+            required
+            value={form.confirmPassword}
+            onChange={(e) => {
+              form.confirmPassword = e.target.value
+              setForm({...form})
+            }}
+          />
+          <ConfirmPassword 
+            password={form.password}
+            confirmPassword={form.confirmPassword}
+          >
+            {(form.confirmPassword !== form.password)?
+            <><AiFillCloseCircle/> Senhas diferentes</>:
+            <><AiFillCheckCircle/> Senhas iguais</>
+            }
+          </ConfirmPassword>  
           <label>Esqueceu sua senha?</label>
           <button>Cadastrar</button>
         </form>

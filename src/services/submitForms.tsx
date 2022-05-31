@@ -40,8 +40,18 @@ export function submitFormSignIn(e, {setLoading, form, updateToken, updateUser, 
 export function submitFormSignUp(e, {setLoading, form, router}){
     e.preventDefault()
     setLoading(true)
+
+    if (form.password !== form.confirmPassword){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Senhas diferentes!'
+      })
+      return
+    }
   
     const body = {...form}
+    delete body.confirmPassword
     body.phone = body.phone.replace(' ', '');
     if (body.phone === '') delete body.phone
     

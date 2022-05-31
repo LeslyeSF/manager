@@ -2,18 +2,20 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+
+  padding: 30px 0 30px 0;
   background-color: #10102D;
   color: white;
   display: flex;
+  align-items: center;
 
   @media (max-width: 800px) {
-    width: 100%;
-    min-height: 100vh;
-    margin: 20px 0 20px 0;
+    padding: 20px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 `
 const LogoContainer = styled.div`
@@ -29,6 +31,10 @@ const LogoContainer = styled.div`
   color: #FCFCFC;
   font-size: 70px;
   font-weight: 900;
+  @media (max-width: 800px) {
+    width: 350px;
+  }
+
 `
 
 const FormArea = styled.div`
@@ -41,17 +47,19 @@ const FormArea = styled.div`
   justify-content: center;
   @media (max-width: 800px) {
     width: 100%;
+    max-width: 500px;
+    min-height: 400px;
   }
 `
 
 const FormContainer = styled.div`
   width: 400px;
   min-height: 400px;
+  max-height: 90vh;
   background-color: #1D1D47;
 
+  overflow: hidden;
   border-radius: 50px;
-
-  padding: 30px;
 
   display: flex;
   flex-direction: column;
@@ -59,8 +67,8 @@ const FormContainer = styled.div`
 
   @media (max-width: 800px) {
     width: 100%;
+    max-height: 1000px;
     padding: 20px;
-    min-height: 400px;
     border-radius: 50px 50px 0 0;
   }
 `
