@@ -6,8 +6,6 @@ import { HomeContainer, MainSection, MenuSection, LogoContainer } from '../style
 import Dashboard from '../components/Dashboard'
 
 export default function Home() {
-  console.log(window.screen.width);
-  
   
   return (
     <>
