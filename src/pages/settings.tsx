@@ -2,6 +2,6 @@ import Loading from "../components/Loading";
 
 export default function Settings(){
   return (
-    <Loading/>
+    <h1>oiii</h1>
   )
 }
