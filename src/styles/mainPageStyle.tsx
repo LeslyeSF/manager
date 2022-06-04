@@ -5,7 +5,7 @@ const MenuSection = styled.div`
   
   @media (max-width: 800px) {
     width: 100%;
-    padding: 20px;
+    padding: 20px 10px 0 10px;
     .logoButton {
       display: flex;
     }
@@ -31,6 +31,7 @@ const HomeContainer = styled.div`
   overflow: hidden;
 
   display: flex;
+  
   @media (max-width: 800px) {
     flex-direction: column;
   }
@@ -70,6 +71,11 @@ const MainSection = styled.div`
   {
     background-color: #74b9ff;
     border-radius: 10px;
+  }
+  @media (max-width: 800px) {
+    border-radius: 50px 50px 0 0;
+    height: auto;
+    overflow: auto;
   }
 
 `

@@ -9,6 +9,7 @@ import { BsFillCreditCard2BackFill } from 'react-icons/bs'
 import { BsBank2 } from 'react-icons/bs'
 import { IoIosArrowDown } from 'react-icons/io'
 import { IoIosArrowUp } from 'react-icons/io'
+import { CgProfile } from 'react-icons/cg'
 import { 
   Container, 
   LogoContainer, 
@@ -90,6 +91,10 @@ export default function Menu(){
         </UserProfile>
         <MenuOptions>
           <h1>Menu</h1>
+          <div onClick={() => router.push('/home')}>
+            <CgProfile/>
+            <p>Perfil</p>
+          </div>
           <div onClick={() => router.push('/home')}>
             <MdDashboard/>
             <p>Dashboard</p>

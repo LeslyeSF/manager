@@ -4,14 +4,14 @@ const Container = styled.div`
   width: 320px;
   min-height: 90vh;
   
-  margin: 30px 15px 30px 15px;
+  margin: 30px 15px 0px 15px;
 
   display: flex;
   flex-direction: column;
   gap: 30px;
   
   @media (max-width: 800px) {
-    margin: 0;
+    margin: 0 0 10px 0;
     min-height: 50px;
     width: 100%;
   }
@@ -74,6 +74,7 @@ const UserProfile = styled.div`
   align-items: center;
   gap: 10px;
 
+
   p{
     color: #6AEAF5;
     font-size: 25px;
@@ -113,6 +114,8 @@ const MenuOptions = styled.div`
   align-items: start;
 
   padding: 0 0 0 10px;
+  max-height: 50vh;
+  
   h1 {
     color: #FCFCFC;
     font-size: 20px;
@@ -163,6 +166,9 @@ const Option = styled.div`
     cursor: pointer;
     color: #6AEAF5;
     background-color: #1D1D47;
+  }
+  @media (max-width: 800px) {
+    display: none;
   }
 `
 

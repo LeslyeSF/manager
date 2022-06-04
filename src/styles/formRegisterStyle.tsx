@@ -21,7 +21,7 @@ const FormContainer = styled.form`
 
   input[type=text], input[type=number]{
     all: unset;
-
+    
     height: 40px;
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
@@ -66,6 +66,9 @@ const FormContainer = styled.form`
   div:nth-child(1){
     align-items: end;
     margin-bottom: 100px;
+    label{
+      text-align: right;
+    }
   }
   div:nth-child(2){
     align-items: start;
@@ -80,10 +83,24 @@ const FormContainer = styled.form`
     width: 200px;
     height: 50px;
 
+    padding: 10px;
+
     background-color: #10102D;
 
     color: #6AEAF5;
     font-weight: 600;
+  }
+
+  @media (max-width: 450px) {
+    input[type=text], input[type=number]{
+      width: 150px;
+    }
+    button {
+      width: 200px;
+    }
+    select{
+      width: 170px;
+    }
   }
  
 `
@@ -140,6 +157,13 @@ const ButtonsArea = styled.section`
        border: 0px;
        pointer-events: none;
        `: ''
+    }
+  }
+  @media (max-width: 450px) {
+    gap: 10px;
+    padding: 5px;
+    div{
+      width: 75px;
     }
   }
 
