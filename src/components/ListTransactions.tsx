@@ -64,7 +64,7 @@ export default function ListTransactions() {
   return (
     <List>
       {(list.length === 0)?
-        <Message>Nao ha transacoes</Message>
+        <Message>Não há transações</Message>
         : list
       }      
     </List>

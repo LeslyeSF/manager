@@ -61,7 +61,7 @@ export default function ListCreditCard() {
   return (
     <List>
       {(list.length === 0)?
-        <Message>Nao ha transacoes</Message>
+        <Message>Não há cartões cadastrados</Message>
         : list
       }      
     </List>

@@ -61,7 +61,7 @@ export default function ListBankAccount() {
   return (
     <List>
       {(list.length === 0)?
-        <Message>Nao ha transacoes</Message>
+        <Message>Não há contas cadastradas</Message>
         : list
       }      
     </List>

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+
 const List = styled.div`
-width: 100%;
+  width: 100%;
 
-box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.06);
+  box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.06);
 
-::-webkit-scrollbar-track
+  ::-webkit-scrollbar-track
   {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -26,75 +27,76 @@ box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.06);
     border-radius: 10px;
   }
 
-border-radius: 50px;
+  border-radius: 50px;
 
-diaply: flex;
-flex-direction: column;
-align-items: center;
-gap: 1px;
+  diaply: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
 
-div:nth-child(1){
-  border-top: 0;
-}
+  div:nth-child(1){
+    border-top: 0;
+  }
 `
 
 const ElementDiv = styled.div`
-width: 100%;
-min-height: 100px;
-position: relative;
+  width: 100%;
+  min-height: 100px;
+  position: relative;
 
-padding: 10px 30px 10px 30px;
+  padding: 10px 30px 10px 30px;
 
-border-top: 1px solid #10102D;
+  border-top: 1px solid #10102D;
 
-display: flex;
-flex-direction: column;
-gap: 5px;
-
-font-size: 15px;
-
-color: #10102D;
-
-div{
   display: flex;
-  justify-content: flex-start;
-  gap: 30px;
-}
+  flex-direction: column;
+  gap: 5px;
 
-.delete{
-  position: absolute;
-  top: 30px;
-  right: 30px;
+  font-size: 15px;
 
-  font-size: 20px;
+  color: #10102D;
 
-  color: #6AEAF5;
-}
+  div{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+  }
 
-.delete:hover{
-  cursor: pointer;
-}
+  .delete{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+    font-size: 20px;
+
+    color: #6AEAF5;
+  }
+
+  .delete:hover{
+    cursor: pointer;
+  }
 
 `
 
 const Name = styled.p`
-font-size: 20px;
-font-weight: 700;
+  font-size: 20px;
+  font-weight: 700;
 
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-p{
-  font-size: 10px;
-  font-weight: 500;
-}
-`
+  p{
+    font-size: 10px;
+    font-weight: 500;
+  }
+  `
 
-const Message = styled.span`
-margin-left: 30px;
-font-weight: 700;
-color: #10102D;
-font-size: 50px;
+const Message = styled.p`
+  margin: 30px;
+  font-weight: 700;
+  color: #10102D;
+  font-size: 30px;
+  text-align: center;
 `
 
 
