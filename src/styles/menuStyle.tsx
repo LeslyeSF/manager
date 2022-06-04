@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   width: 320px;
-  height: 90vh;
+  min-height: 90vh;
   
   margin: 30px 15px 30px 15px;
 
@@ -10,19 +10,59 @@ const Container = styled.div`
   flex-direction: column;
   gap: 30px;
   
-  @media (max-width: 650px) {
+  @media (max-width: 800px) {
+    margin: 0;
+    min-height: 50px;
+    width: 100%;
+  }
+`
+const SubContainer = styled.div`
+  @media (max-width: 800px) {
+    ${(props : createSubContainer) => (props.showMenu)?
+      ``:`display:none;`
+    }
   }
 `
 const LogoContainer = styled.div`
   width: 100%;
 
   display: flex;
+  align-items: center;
   gap: 20px;
 
-  p{
-    color: #FCFCFC;
-    font-size: 40px;
-    font-weight: 900;
+  pointer-events: auto;
+
+  color: #FCFCFC;
+  font-size: 40px;
+  font-weight: 900;
+  
+  div:nth-child(2){
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  @media (max-width: 800px) {
+    justify-content: space-between;
+  }
+  @media (max-width: 450px) {
+    justify-content: space-between;
+    div:nth-child(2){
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      p{
+        display: none;
+      }
+    }
+  }
+
+`
+
+const MenuButton = styled.div`
+  display: none;
+  @media (max-width: 800px) {
+    display: flex;
+    margin: 0;
   }
 `
 
@@ -97,6 +137,14 @@ const MenuOptions = styled.div`
     color: #6AEAF5;
     background-color: #1D1D47;
   }
+  @media (max-width: 800px) {
+    align-items: center;
+    padding: 0;
+    div{
+      justify-content: center;
+      padding: 0;
+    }
+  }
 `
 const Option = styled.div`
   width: 100%;
@@ -117,4 +165,17 @@ const Option = styled.div`
     background-color: #1D1D47;
   }
 `
-export { Container, LogoContainer, UserProfile, FramePhoto, MenuOptions, Option }
+
+interface createSubContainer{
+  showMenu: boolean
+}
+export { 
+  Container, 
+  LogoContainer, 
+  UserProfile, 
+  FramePhoto, 
+  MenuOptions, 
+  Option,
+  SubContainer,
+  MenuButton
+ }

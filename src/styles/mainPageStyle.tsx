@@ -2,9 +2,7 @@ import styled from 'styled-components'
 
 const MenuSection = styled.div`
   width: 340px;
-  .logoButton {
-    display: none;
-  }
+  
   @media (max-width: 800px) {
     width: 100%;
     padding: 20px;

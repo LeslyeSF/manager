@@ -2,7 +2,7 @@
 import Menu from '../components/Menu'
 import HeadPage from '../components/HeadPage'
 import Logo from '../components/Logo'
-import { HomeContainer, MainSection, MenuSection, LogoContainer } from '../styles/mainPageStyle'
+import { HomeContainer, MainSection, MenuSection } from '../styles/mainPageStyle'
 import Dashboard from '../components/Dashboard'
 
 export default function Home() {
@@ -12,10 +12,6 @@ export default function Home() {
       <HeadPage titlePage={'Home'}/>
       <HomeContainer>
         <MenuSection>
-          <LogoContainer className='logoButton'>
-            <Logo size={50}/>
-            <p>Manager</p>
-          </LogoContainer>
           <Menu/>
         </MenuSection>
         <MainSection>
